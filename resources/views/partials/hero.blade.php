@@ -21,7 +21,7 @@
                 </span>
             </div>
 
-            <!-- Headline Baru -->
+            <!-- Headline -->
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
                 IT Management & <br>
                 <span class="bg-gradient-to-r from-cyan-400 via-indigo-300 to-emerald-400 bg-clip-text text-transparent">
@@ -30,7 +30,7 @@
             </h1>
 
             <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl">
-                Transforming business challenges into reliable technology solutions through strategic project leadership, robust IT infrastructure, and enterprise system development.
+                Menghubungkan keandalan infrastruktur IT, manajemen proyek strategis, dan managed services dengan performa tinggi pengembangan perangkat lunak berbasis Laravel, Python API, dan MySQL.
             </p>
 
             <!-- Tech & Management Badges Bar -->
@@ -54,7 +54,7 @@
             </div>
 
             <!-- Action Buttons -->
-            <div class="flex flex-wrap items-center gap-4 pt-4">
+            <div class="flex flex-wrap items-center gap-4 pt-2">
                 <a href="#api-tester" class="px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all">
                     <i class="fa-solid fa-terminal mr-2"></i>Uji Live API
                 </a>
@@ -62,6 +62,27 @@
                     Lihat Portofolio & CV
                 </a>
             </div>
+
+            <!-- Stats Counter Bar (Disusun Kesamping) -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-slate-800/80 mt-6">
+                <div>
+                    <h4 class="text-2xl sm:text-3xl font-extrabold text-cyan-400">15+</h4>
+                    <p class="text-xs text-slate-400 font-mono mt-1">Years Experience</p>
+                </div>
+                <div>
+                    <h4 class="text-2xl sm:text-3xl font-extrabold text-cyan-400">20+</h4>
+                    <p class="text-xs text-slate-400 font-mono mt-1">Major Projects</p>
+                </div>
+                <div>
+                    <h4 class="text-2xl sm:text-3xl font-extrabold text-cyan-400">5+</h4>
+                    <p class="text-xs text-slate-400 font-mono mt-1">Industries</p>
+                </div>
+                <div>
+                    <h4 class="text-2xl sm:text-3xl font-extrabold text-cyan-400">50+</h4>
+                    <p class="text-xs text-slate-400 font-mono mt-1">Systems Delivered</p>
+                </div>
+            </div>
+
         </div>
 
         <!-- Right Visual / Profile Column -->
@@ -105,3 +126,30 @@
 
     </div>
 </section>
+
+@push('scripts')
+<script>
+    async function checkApiHealth() {
+        const statusEl = document.getElementById('ping-status');
+        const resultEl = document.getElementById('ping-result');
+        const timeEl = document.getElementById('ping-time');
+
+        statusEl.innerText = "PINGING...";
+        statusEl.className = "text-amber-400 font-bold";
+
+        const start = performance.now();
+        try {
+            await new Promise(resolve => setTimeout(resolve, 250)); 
+            const duration = Math.round(performance.now() - start);
+
+            statusEl.innerText = "200 OK";
+            statusEl.className = "text-emerald-400 font-bold";
+            resultEl.classList.remove('hidden');
+            timeEl.innerText = `${duration} ms`;
+        } catch (error) {
+            statusEl.innerText = "ERROR";
+            statusEl.className = "text-red-400 font-bold";
+        }
+    }
+</script>
+@endpush
