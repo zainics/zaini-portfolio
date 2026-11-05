@@ -63,7 +63,7 @@
                 </a>
             </div>
 
-            <!-- Stats Counter Bar (Disusun Kesamping) -->
+            <!-- Stats Counter Bar -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-slate-800/80 mt-6">
                 <div>
                     <h4 class="text-2xl sm:text-3xl font-extrabold text-cyan-400">15+</h4>
@@ -85,20 +85,20 @@
 
         </div>
 
-        <!-- Right Visual / Profile Column -->
+        <!-- Right Visual / Profile Column (Diperbesar & Disesuaikan Ulang Layoutnya) -->
         <div class="lg:col-span-5 flex justify-center relative">
-            <div class="relative w-full max-w-sm">
+            <div class="relative w-full max-w-md">
                 
                 <!-- Glowing Profile Frame -->
                 <div class="relative rounded-3xl p-1 bg-gradient-to-b from-cyan-500 via-indigo-500 to-emerald-500 shadow-2xl shadow-cyan-500/20">
-                    <div class="bg-slate-900 rounded-[22px] p-4 text-center overflow-hidden">
+                    <div class="bg-slate-900 rounded-[22px] p-6 text-center overflow-hidden">
                         
-                        <!-- Foto Profile -->
-                        <div class="w-36 h-36 mx-auto rounded-2xl bg-slate-800 border-2 border-slate-700 overflow-hidden mb-4 shadow-inner">
-                            <img src="{{ asset('images/profile.jpg') }}" alt="Zaini" class="w-full h-full object-cover" onError="this.src='https://via.placeholder.com/150?text=Zaini'">
+                        <!-- Foto Profile Diperbesar (w-56 h-56 atau ukuran lebih lebar) -->
+                        <div class="w-full h-72 mx-auto rounded-2xl bg-slate-800 border-2 border-slate-700 overflow-hidden mb-5 shadow-inner">
+                            <img src="{{ asset('images/profile.jpg') }}" alt="Zaini" class="w-full h-full object-cover object-top" onError="this.src='https://via.placeholder.com/400?text=Zaini'">
                         </div>
 
-                        <h3 class="text-xl font-bold text-white">Zaini</h3>
+                        <h3 class="text-2xl font-bold text-white">Zaini</h3>
                         <p class="text-xs text-cyan-400 font-mono mt-1">IT Management & Software Developer</p>
 
                         <!-- Quick Live Ping Teaser Widget -->
