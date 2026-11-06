@@ -1,4 +1,4 @@
-<header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800/80">
+<header class="sticky top-0 z-50 bg-slate-900/85 backdrop-blur-md border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
         <!-- Brand Logo -->
@@ -16,20 +16,20 @@
             </div>
         </a>
 
-        <!-- Menu Navigation -->
+        <!-- Menu Navigation (Bersih tanpa teks sisa) -->
         <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
             <a href="#hero" class="hover:text-cyan-400 transition-colors">Home</a>
             <a href="#biodata" class="hover:text-cyan-400 transition-colors">Biodata</a>
             <a href="#managed-services" class="hover:text-cyan-400 transition-colors">Managed Services</a>
-            <a href="#api-tester" class="hover:text-cyan-400 transition-colors">API Tester</a>
             <a href="#architecture" class="hover:text-cyan-400 transition-colors">Arsitektur</a>
             <a href="#contact" class="hover:text-cyan-400 transition-colors">Kontak</a>
         </nav>
 
-        <!-- CTA Action -->
+        <!-- CTA Action (Tombol Test Live API) -->
         <div class="flex items-center gap-4">
-            <a href="#api-tester" class="px-4 py-2 rounded-lg text-xs font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-lg shadow-cyan-500/20 hover:opacity-90 transition-all">
-                <i class="fa-solid fa-bolt mr-2"></i>Test Live API
+            <a href="{{ route('portfolio.api-playground') }}" class="px-4 py-2.5 rounded-xl text-xs font-mono font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-lg shadow-cyan-500/20 hover:opacity-90 transition-all flex items-center space-x-2">
+                <i class="fa-solid fa-bolt text-cyan-200"></i>
+                <span>Test Live API</span>
             </a>
         </div>
     </div>

@@ -39,8 +39,6 @@
     {{-- Section Managed Services & IT Infrastructure --}}
     @include('partials.managed-services')
 
-    {{-- Section Live API Tester --}}
-    @include('partials.api-tester')
 
     {{-- Section Arsitektur Sistem --}}
     @include('partials.architecture')

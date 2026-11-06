@@ -89,42 +89,30 @@
                     <i class="fa-solid fa-paper-plane text-cyan-400"></i> Kirim Pesan Pesan Langsung
                 </h3>
 
-                <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-5">
+                <form action="{{ route('contact.send') }}" method="POST" class="space-y-4">
                     @csrf
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <!-- Name Input -->
-                        <div class="space-y-2">
-                            <label for="name" class="text-xs font-mono text-slate-300 uppercase block">Nama Lengkap *</label>
-                            <input type="text" id="name" name="name" required placeholder="John Doe" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors">
-                        </div>
+                    <div>
+                        <label class="block text-xs font-mono text-slate-400 mb-1">Nama Lengkap</label>
+                        <input type="text" name="name" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:border-cyan-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono text-slate-400 mb-1">Email</label>
+                        <input type="email" name="email" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:border-cyan-500 focus:outline-none">
+                    </div>
+                    <div>
 
-                        <!-- Email Input -->
-                        <div class="space-y-2">
-                            <label for="contact_email" class="text-xs font-mono text-slate-300 uppercase block">Email Anda *</label>
-                            <input type="email" id="contact_email" name="email" required placeholder="nama@email.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors">
-                        </div>
+                    <div>
+                        <label class="block text-xs font-mono text-slate-400 mb-1">Subjek</label>
+                        <input type="text" name="subject" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:border-cyan-500 focus:outline-none" placeholder="Subjek pesan (opsional)">
                     </div>
 
-                    <!-- Subject Input -->
-                    <div class="space-y-2">
-                        <label for="subject" class="text-xs font-mono text-slate-300 uppercase block">Subjek / Topik *</label>
-                        <input type="text" id="subject" name="subject" required placeholder="Konsultasi Proyek / Tawaran Kerjasama" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors">
+                        <label class="block text-xs font-mono text-slate-400 mb-1">Pesan</label>
+                        <textarea name="message" rows="4" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:border-cyan-500 focus:outline-none"></textarea>
                     </div>
-
-                    <!-- Message Input -->
-                    <div class="space-y-2">
-                        <label for="message" class="text-xs font-mono text-slate-300 uppercase block">Pesan *</label>
-                        <textarea id="message" name="message" rows="4" required placeholder="Tuliskan detail kebutuhan atau pertanyaan Anda di sini..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors resize-none"></textarea>
-                    </div>
-
-                    <!-- Alert Feedback Message -->
-                    <div id="form-alert" class="hidden p-4 rounded-xl text-xs font-mono"></div>
-
-                    <!-- Submit Button -->
-                    <button type="submit" id="btn-submit-contact" class="w-full py-3.5 px-6 rounded-xl font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-lg shadow-cyan-500/20 hover:opacity-90 transition-all flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-paper-plane text-xs"></i> Kirim Pesan via API
+                    <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-semibold shadow-lg shadow-cyan-500/20 hover:opacity-90 transition-all">
+                         <i class="fa-solid fa-paper-plane text-xs"></i> Kirim Pesan via API
                     </button>
+
                 </form>
             </div>
 

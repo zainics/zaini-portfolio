@@ -53,9 +53,11 @@
                 </div>
             </div>
 
+
+
             <!-- Action Buttons -->
             <div class="flex flex-wrap items-center gap-4 pt-2">
-                <a href="#api-tester" class="px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all">
+                <a href="{{ route('portfolio.api-playground') }}" class="px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all">
                     <i class="fa-solid fa-terminal mr-2"></i>Uji Live API
                 </a>
                 <a href="#biodata" class="px-6 py-3 rounded-xl font-semibold bg-slate-900 text-slate-300 border border-slate-800 hover:bg-slate-800 hover:text-white transition-all">
