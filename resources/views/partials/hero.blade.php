@@ -23,7 +23,7 @@
 
             <!-- Headline -->
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
-                IT Management & <br>
+                IT Project Management & <br>
                 <span class="bg-gradient-to-r from-cyan-400 via-indigo-300 to-emerald-400 bg-clip-text text-transparent">
                     Software Development
                 </span>
@@ -37,7 +37,7 @@
             <div class="flex flex-wrap items-center gap-6 pt-2 text-slate-400">
                 <div class="flex items-center gap-2">
                     <i class="fa-solid fa-diagram-project text-xl text-cyan-400"></i>
-                    <span class="text-sm font-semibold text-slate-200">IT Management</span>
+                    <span class="text-sm font-semibold text-slate-200">IT Project Management</span>
                 </div>
                 <div class="flex items-center gap-2">
                     <i class="fa-brands fa-python text-2xl text-cyan-400"></i>
@@ -101,7 +101,7 @@
                         </div>
 
                         <h3 class="text-2xl font-bold text-white">Zaini</h3>
-                        <p class="text-xs text-cyan-400 font-mono mt-1">IT Management & Software Developer</p>
+                        <p class="text-xs text-cyan-400 font-mono mt-1">IT Project Management & Software Developer</p>
 
                         <!-- Quick Live Ping Teaser Widget -->
                         <div class="mt-6 p-4 rounded-xl bg-slate-950/80 border border-slate-800/80 text-left">
