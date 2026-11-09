@@ -107,34 +107,88 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 font-mono text-xs">
                 
-                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800/80">
-                    <span class="text-amber-400 font-bold block mb-1">Korpolairud (2021-2022)</span>
-                    <p class="text-slate-300">Pembangunan jaringan Fiber Optic, kelistrikan, sistem keamanan elektronik, server & Command Center.</p>
+                <!-- Korpolairud -->
+                <div class="bg-slate-900/80 rounded-xl border border-slate-800/80 overflow-hidden group flex flex-col">
+                    <div class="h-32 w-full overflow-hidden relative">
+                        <img src="/images/korpolairud.jpg" alt="Korpolairud" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-amber-400 font-bold block mb-1">Korpolairud (2021-2022)</span>
+                            <p class="text-slate-300">Pembangunan jaringan Fiber Optic, kelistrikan, sistem keamanan elektronik, server & Command Center.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800/80">
-                    <span class="text-cyan-400 font-bold block mb-1">Kemendikbud Senayan (2019)</span>
-                    <p class="text-slate-300">Jaringan FO, kelistrikan, sensor kendaraan, & konfigurasi server Sistem Parkir Interaktif.</p>
+                <!-- Kemendikbud Senayan -->
+                <div class="bg-slate-900/80 rounded-xl border border-slate-800/80 overflow-hidden group flex flex-col">
+                    <div class="h-32 w-full overflow-hidden relative">
+                        <img src="/images/kemendikbud.jpg" alt="Kemendikbud Senayan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-cyan-400 font-bold block mb-1">Kemendikbud Senayan (2019)</span>
+                            <p class="text-slate-300">Jaringan FO, kelistrikan, sensor kendaraan, & konfigurasi server Sistem Parkir Interaktif.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800/80">
-                    <span class="text-indigo-400 font-bold block mb-1">Kampus STAN Bintaro (2019)</span>
-                    <p class="text-slate-300">Pengembangan Sistem Monitoring dan Pengawasan Parkir Terpadu.</p>
+                <!-- Kampus STAN Bintaro -->
+                <div class="bg-slate-900/80 rounded-xl border border-slate-800/80 overflow-hidden group flex flex-col">
+                    <div class="h-32 w-full overflow-hidden relative">
+                        <img src="/images/stan.jpg" alt="Kampus STAN Bintaro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-indigo-400 font-bold block mb-1">Kampus STAN Bintaro (2019)</span>
+                            <p class="text-slate-300">Pengembangan Sistem Monitoring dan Pengawasan Parkir Terpadu.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800/80">
-                    <span class="text-emerald-400 font-bold block mb-1">Ariobimo Building (2022-2023)</span>
-                    <p class="text-slate-300">Instalasi Access Control Sistem pada Lift Mitsubishi Elevator.</p>
+                <!-- Ariobimo Building -->
+                <div class="bg-slate-900/80 rounded-xl border border-slate-800/80 overflow-hidden group flex flex-col">
+                    <div class="h-32 w-full overflow-hidden relative">
+                        <img src="/images/ariobimo.jpg" alt="Ariobimo Building" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-emerald-400 font-bold block mb-1">Ariobimo Building (2022-2023)</span>
+                            <p class="text-slate-300">Instalasi Access Control Sistem pada Lift Mitsubishi Elevator.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800/80">
-                    <span class="text-red-400 font-bold block mb-1">Pusdiklat Sandi Negara (2015)</span>
-                    <p class="text-slate-300">Infrastruktur jaringan, sistem pengawasan elektronik, dan konfigurasi server Museum & Pusdiklat.</p>
+                <!-- Pusdiklat Sandi Negara -->
+                <div class="bg-slate-900/80 rounded-xl border border-slate-800/80 overflow-hidden group flex flex-col">
+                    <div class="h-32 w-full overflow-hidden relative">
+                        <img src="/images/pusdiklat.jpg" alt="Pusdiklat Sandi Negara" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-red-400 font-bold block mb-1">Pusdiklat Sandi Negara (2015)</span>
+                            <p class="text-slate-300">Infrastruktur jaringan, sistem pengawasan elektronik, dan konfigurasi server Museum & Pusdiklat.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800/80">
-                    <span class="text-purple-400 font-bold block mb-1">Perbankan Nasional (BCA, Mandiri, BSI, BJB)</span>
-                    <p class="text-slate-300">Pengembangan Kios Self Service Passbook Printer & Integrasi EDC GPN.</p>
+                <!-- Perbankan Nasional -->
+                <div class="bg-slate-900/80 rounded-xl border border-slate-800/80 overflow-hidden group flex flex-col">
+                    <div class="h-32 w-full overflow-hidden relative">
+                        <img src="/images/perbankan.jpg" alt="Perbankan Nasional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-purple-400 font-bold block mb-1">Perbankan Nasional (BCA, Mandiri, BSI, BJB)</span>
+                            <p class="text-slate-300">Pengembangan Kios Self Service Passbook Printer & Integrasi EDC GPN.</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>

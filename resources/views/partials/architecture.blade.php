@@ -10,7 +10,7 @@
                 System Design & Architecture
             </span>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4">
-                Integrasi Laravel, Python & MySQL
+                Software Developer
             </h2>
             <p class="text-slate-400 mt-3 text-base">
                 Diagram alur komunikasi end-to-end yang memisahkan lapisan antarmuka pengguna (Frontend), pemrosesan logika & AI (Backend Python), serta penyimpanan data relasional.
