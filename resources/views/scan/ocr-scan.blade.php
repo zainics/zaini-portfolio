@@ -10,7 +10,7 @@
         const AI_ENDPOINT = "{{ config('services.ai_fastapi.endpoint', 'http://127.0.0.1:8001/api/v1/ai-wms/agent-chat') }}";
     </script>
 
-    
+
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -35,6 +35,7 @@
             <a href="{{ route('portfolio.api-playground') }}" class="text-slate-400 hover:text-cyan-300 transition-colors">FastAPI Playground</a>
             <a href="{{ route('portfolio.ai-chat') }}" class="text-slate-400 hover:text-cyan-300 transition-colors">AI Chatbot Booth</a>
             <a href="{{ route('portfolio.ocr-scan') }}" class="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">OCR Scanner</a>
+            <a href="{{ route('portfolio.tradingview') }}" class="text-slate-400 hover:text-cyan-300 transition-colors">External API</a>
         </div>
         <div>
             <a href="{{ route('portfolio.home') }}" class="px-4 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-cyan-400 hover:border-cyan-500 transition-all">Back to Home</a>

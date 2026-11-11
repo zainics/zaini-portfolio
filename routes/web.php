@@ -44,3 +44,8 @@ Route::get('/ai/forecasts-history', [ForecastController::class, 'index'])->name(
 Route::get('/ocr-scan', function () {
     return view('scan.ocr-scan');
 })->name('portfolio.ocr-scan');
+
+// Rute untuk menampilkan TradingView Widget dari folder external-api
+Route::get('/tradingview-market', function () {
+    return view('external-api.tradingview');
+})->name('portfolio.tradingview');

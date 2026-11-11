@@ -33,6 +33,7 @@
             <a href="{{ url('/api-playground') }}" class="text-slate-400 hover:text-cyan-300 transition-colors">FastAPI Playground</a>
             <a href="{{ url('/ai-chat') }}" class="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">AI Chatbot Booth</a>
             <a href="{{ route('portfolio.ocr-scan') }}" class="text-slate-400 hover:text-cyan-300 transition-colors">OCR Scanner</a>
+            <a href="{{ route('portfolio.tradingview') }}" class="text-slate-400 hover:text-cyan-300 transition-colors">External API</a>
         </div>
         <div>
             <a href="{{ url('/') }}" class="px-4 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-cyan-400 hover:border-cyan-500 transition-all">Back to Home</a>
