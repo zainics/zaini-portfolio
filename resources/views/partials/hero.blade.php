@@ -51,6 +51,23 @@
                     <i class="fa-solid fa-server text-xl text-amber-500"></i>
                     <span class="text-sm font-semibold text-slate-200">Infrastructure</span>
                 </div>
+
+                <!-- Baris Kedua (MySQL, PostgreSQL, & OpenAI) -->
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <div class="flex items-center gap-2">
+            <i class="fa-solid fa-database text-xl text-amber-400"></i>
+            <span class="text-sm font-semibold text-slate-200">MySQL</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <i class="fa-solid fa-server text-xl text-sky-400"></i>
+            <span class="text-sm font-semibold text-slate-200">PostgreSQL</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <i class="fa-solid fa-brain text-xl text-emerald-400"></i>
+            <span class="text-sm font-semibold text-slate-200">OpenAI</span>
+        </div>
+    </div>
+    
             </div>
 
 
