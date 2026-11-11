@@ -35,4 +35,18 @@ return [
         ],
     ],
 
+
+    // Konfigurasi bawaan lainnya (mailgun, ses, postmark, dll)
+    'mailgun' => [
+        'domain' => env('MAILGUN_DOMAIN'),
+        'secret' => env('MAILGUN_SECRET'),
+        'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
+    ],
+
+    // TAMBAHKAN KONFIGURASI AI FASTAPI DI SINI
+    'ai_fastapi' => [
+        'endpoint' => env('AI_FASTAPI_ENDPOINT', 'http://127.0.0.1:8001/api/v1/ai-wms/agent-chat'),
+    ],
+
+
 ];

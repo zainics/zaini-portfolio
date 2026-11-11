@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZAINI.DEV // AI-WMS OCR Scanner</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        const AI_ENDPOINT = "{{ config('services.ai_fastapi.endpoint', 'http://127.0.0.1:8001/api/v1/ai-wms/agent-chat') }}";
+    </script>
+
+    
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }

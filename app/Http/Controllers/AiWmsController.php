@@ -94,4 +94,12 @@ class AiWmsController extends Controller
             ], 500);
         }
     }
+
+
+    public function playground()
+    {
+        $aiEndpoint = config('services.ai_fastapi.endpoint');
+        return view('portfolio.api-playground', compact('aiEndpoint'));
+    }
+
 }

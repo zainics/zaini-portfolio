@@ -140,29 +140,78 @@
         });
     });
 
-    async function sendAiWmsQuery() {
-        const warehouseId = document.getElementById('warehouseSelect').value;
-        const promptQuery = document.getElementById('promptInput').value;
-        const endpointSelect = document.getElementById('apiEndpoint').value;
+   async function sendAiWmsQuery() {
+        const warehouseIdVal = document.getElementById('warehouseSelect').value;
+        const warehouseId = warehouseIdVal ? parseInt(warehouseIdVal) : null;
+        const promptQuery = document.getElementById('promptInput').value.trim();
         const outputElement = document.getElementById('responseConsole');
         const latencyText = document.getElementById('latencyText');
+        const sendBtn = document.getElementById('sendRequestBtn');
+
+        if (!promptQuery) return;
+
+        if (sendBtn) {
+            sendBtn.disabled = true;
+            sendBtn.innerText = "Memproses Agent...";
+        }
 
         const startTime = performance.now();
         try {
-            const res = await fetch(`http://127.0.0.1:8001${endpointSelect}`, {
+            // Menggunakan AI_ENDPOINT yang telah disuntikkan dari config Laravel (.env)
+            const res = await fetch(AI_ENDPOINT, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ warehouse_id: parseInt(warehouseId), prompt_query: promptQuery })
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    warehouse_id: warehouseId, 
+                    prompt_query: promptQuery 
+                })
             });
-            const data = await res.json();
+
             const latency = Math.round(performance.now() - startTime);
             latencyText.innerText = `Latency: ${latency} ms`;
+
+            if (!res.ok) throw new Error(`HTTP Error Status: ${res.status}`);
+
+            const data = await res.json();
             outputElement.textContent = JSON.stringify(data, null, 4);
+
+            // Update grafik jika fungsi chart tersedia
+            if (typeof aiMetricsChart !== 'undefined' && aiMetricsChart && data.database_context) {
+                const whCount = data.database_context.warehouse_count || 0;
+                const totalItems = data.database_context.summary?.total_items || 0;
+                const totalUnits = data.database_context.summary?.total_units || 0;
+                const criticalCount = data.database_context.critical_stocks ? data.database_context.critical_stocks.length : 0;
+
+                aiMetricsChart.data.datasets[0].data = [whCount, totalItems, totalUnits, criticalCount];
+                aiMetricsChart.update();
+            }
+
+            if (typeof appendHistoryLog === 'function') {
+                appendHistoryLog(promptQuery, true);
+            }
+
         } catch (e) {
-            outputElement.textContent = `[ERROR]: Gagal terhubung ke FastAPI. (${e.message})`;
+            const latency = Math.round(performance.now() - startTime);
+            latencyText.innerText = `Latency: ${latency} ms`;
+            outputElement.textContent = `[ERROR]: Gagal terhubung ke endpoint FastAPI.\nURL: ${AI_ENDPOINT}\nDetail: ${e.message}`;
+            
+            if (typeof appendHistoryLog === 'function') {
+                appendHistoryLog(promptQuery, false);
+            }
+        } finally {
+            if (sendBtn) {
+                sendBtn.disabled = false;
+                sendBtn.innerText = "Kirim Request ke AI Agent";
+            }
         }
     }
-    function clearHistory() { document.getElementById('historyList').innerHTML = '<p class="text-slate-600 italic">Kosong</p>'; }
+
+    function clearHistory() { 
+        document.getElementById('historyList').innerHTML = '<p class="text-slate-600 italic">Belum ada riwayat eksekusi.</p>'; 
+    }
 </script>
 </body>
 </html>
