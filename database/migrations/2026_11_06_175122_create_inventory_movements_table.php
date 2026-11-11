@@ -11,20 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('inventory_movements', function (Blueprint $table) {
-            $table->integer('id')->nullable();
+        // Pengecekan agar aman dari error "Table already exists" di Railway/Production
+        if (!Schema::hasTable('inventory_movements')) {
+            Schema::create('inventory_movements', function (Blueprint $table) {
+                $table->id(); // Auto-increment Primary Key
 
-            $table->integer('sku_id')->nullable();
-            $table->integer('warehouse_id')->nullable();
+                $table->unsignedBigInteger('sku_id')->nullable();
+                $table->unsignedBigInteger('warehouse_id')->nullable();
 
-            $table->string('movement_type')->nullable();
-            $table->integer('quantity')->nullable();
+                $table->string('movement_type')->nullable(); // Contoh: 'IN' atau 'OUT'
+                $table->integer('quantity')->nullable();
 
-            $table->string('reference_number')->nullable();
+                $table->string('reference_number')->nullable();
 
-            $table->dateTime('movement_date')->nullable();
-        });
-
+                $table->dateTime('movement_date')->nullable();
+                
+                $table->timestamps(); // Mencatat created_at dan updated_at secara otomatis
+            });
+        }
     }
 
     /**

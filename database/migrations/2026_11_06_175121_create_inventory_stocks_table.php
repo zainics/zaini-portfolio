@@ -11,20 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('inventory_stocks', function (Blueprint $table) {
-            $table->integer('id')->nullable();
+        // Pengecekan agar aman dari error "Table already exists" di Railway/Production
+        if (!Schema::hasTable('inventory_stocks')) {
+            Schema::create('inventory_stocks', function (Blueprint $table) {
+                $table->id(); // Auto-increment Primary Key
 
-            $table->integer('warehouse_id')->nullable();
-            $table->integer('sku_id')->nullable();
-            $table->integer('rack_id')->nullable();
+                $table->unsignedBigInteger('warehouse_id')->nullable();
+                $table->unsignedBigInteger('sku_id')->nullable();
+                $table->unsignedBigInteger('rack_id')->nullable();
 
-            $table->integer('quantity')->nullable();
+                $table->integer('quantity')->nullable();
 
-            $table->integer('min_stock_level')->nullable();
-            $table->integer('max_stock_level')->nullable();
+                $table->integer('min_stock_level')->nullable();
+                $table->integer('max_stock_level')->nullable();
 
-            $table->dateTime('updated_at')->nullable();
-        });
+                $table->timestamps(); // Membuat kolom created_at dan updated_at secara otomatis
+            });
+        }
     }
 
     /**

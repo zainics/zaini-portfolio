@@ -11,15 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('skus', function (Blueprint $table) {
-            $table->integer('id')->nullable();
-            $table->string('sku_code')->nullable();
-            $table->string('product_name')->nullable();
-            $table->string('category')->nullable();
-            $table->double('unit_weight')->nullable();
-            $table->integer('unit_price')->nullable();
-            $table->dateTime('created_at')->nullable();
-        });
+        // Pengecekan agar aman dari error "Table already exists" di production/Railway
+        if (!Schema::hasTable('skus')) {
+            Schema::create('skus', function (Blueprint $table) {
+                $table->id(); // Menggantikan integer('id') menjadi Auto-Increment Primary Key
+                $table->string('sku_code')->nullable();
+                $table->string('product_name')->nullable();
+                $table->string('category')->nullable();
+                $table->double('unit_weight')->nullable();
+                $table->integer('unit_price')->nullable();
+                $table->timestamps(); // Otomatis membuat created_at dan updated_at
+            });
+        }
     }
 
     /**
