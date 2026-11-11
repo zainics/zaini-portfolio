@@ -8,13 +8,16 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('warehouses', function (Blueprint $table) {
-            $table->integer('id')->nullable();
-            $table->string('warehouse_code')->nullable();
-            $table->string('warehouse_name')->nullable();
-            $table->string('location_city')->nullable();
-            $table->dateTime('created_at')->nullable();
-        });
+        // Cek apakah tabel belum ada, baru buat tabelnya
+        if (!Schema::hasTable('warehouses')) {
+            Schema::create('warehouses', function (Blueprint $table) {
+                $table->id();
+                $table->string('warehouse_code')->nullable();
+                $table->string('warehouse_name')->nullable();
+                $table->string('location_city')->nullable();
+                $table->timestamp('created_at')->nullable(); // atau $table->timestamps();
+            });
+        }
     }
 
     public function down(): void
