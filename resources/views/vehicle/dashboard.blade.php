@@ -81,15 +81,17 @@
                 OCR Scanner
             </a>
 
+             <a href="{{ route('vehicle.dashboard') }}"
+               class="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">
+                Vehicle Detection
+            </a>
+            
             <a href="{{ route('portfolio.tradingview') }}"
                class="text-slate-400 hover:text-cyan-300 transition-colors">
                 External API
             </a>
 
-            <a href="{{ route('vehicle.dashboard') }}"
-               class="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">
-                Vehicle Detection
-            </a>
+           
         </div>
 
         <div>

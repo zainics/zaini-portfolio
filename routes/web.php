@@ -50,8 +50,13 @@ Route::get('/tradingview-market', function () {
     return view('external-api.tradingview');
 })->name('portfolio.tradingview');
 
+
+Route::get('/vehicle-dashboard', function () {
+    return view('vehicle.dashboard');
+})->name('vehicle.dashboard');
+
 // Halaman utama Dashboard ANPR
-Route::get('/vehicle-dashboard', [VehicleDashboardController::class, 'index'])->name('vehicle.dashboard');
+#Route::get('/vehicle-dashboard', [VehicleDashboardController::class, 'index'])->name('vehicle.dashboard');
 
 // Endpoint untuk mengambil data real-time capture terbaru (untuk AJAX / Fetch API di frontend)
 Route::get('/api/vehicle-captures', [VehicleDashboardController::class, 'getLatestCaptures'])->name('vehicle.captures.json');
