@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZAINI.DEV // AI-WMS OCR Scanner</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <script>
         const AI_ENDPOINT = "{{ config('services.ai_fastapi.endpoint', 'http://127.0.0.1:8001/api/v1/ai-wms/agent-chat') }}";
     </script>
@@ -35,6 +36,9 @@
             <a href="{{ route('portfolio.api-playground') }}" class="text-slate-400 hover:text-cyan-300 transition-colors">FastAPI Playground</a>
             <a href="{{ route('portfolio.ai-chat') }}" class="text-slate-400 hover:text-cyan-300 transition-colors">AI Chatbot Booth</a>
             <a href="{{ route('portfolio.ocr-scan') }}" class="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">OCR Scanner</a>
+            
+            <!-- Menu Baru: Vehicle ANPR -->
+            <a href="{{ route('vehicle.dashboard') }}" class="text-slate-400 hover:text-cyan-300 transition-colors">Vehicle Detection</a>
             <a href="{{ route('portfolio.tradingview') }}" class="text-slate-400 hover:text-cyan-300 transition-colors">External API</a>
         </div>
         <div>

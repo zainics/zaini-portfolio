@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AiWmsController;
 use App\Http\Controllers\ForecastController;
-
+use App\Http\Controllers\VehicleDashboardController;
 // ==========================================
 // 1. RUTE HALAMAN UTAMA (PORTFOLIO)
 // ==========================================
@@ -49,3 +49,14 @@ Route::get('/ocr-scan', function () {
 Route::get('/tradingview-market', function () {
     return view('external-api.tradingview');
 })->name('portfolio.tradingview');
+
+// Halaman utama Dashboard ANPR
+Route::get('/vehicle-dashboard', [VehicleDashboardController::class, 'index'])->name('vehicle.dashboard');
+
+// Endpoint untuk mengambil data real-time capture terbaru (untuk AJAX / Fetch API di frontend)
+Route::get('/api/vehicle-captures', [VehicleDashboardController::class, 'getLatestCaptures'])->name('vehicle.captures.json');
+
+Route::get(
+    '/vehicle/captures',
+    [VehicleDashboardController::class, 'captures']
+);
